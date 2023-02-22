@@ -8,10 +8,11 @@ def rootform():
 
 @app.route('/process', methods=['POST'])
 def process():
+    print(request.form.getlist("belts"))
     session['name'] =request.form['name']
     session['age']= request.form['age']
     session['location']=request.form['location']
-    session['belts']= request.form['belts']
+    session['belts']= request.form.getlist('belts')
     session['language']=request.form['language']
     session['comments']=request.form['comments']
     print(session)
