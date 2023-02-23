@@ -3,7 +3,7 @@ app=Flask(__name__)
 app.secret_key = 'keep it secret'
 
 @app.route('/')
-def rootform():
+def display_form():
     return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
@@ -19,7 +19,7 @@ def process():
     return redirect('/result') 
 
 @app.route('/result')
-def result():
+def show_result():
     return render_template('result.html')
 
 @app.route('/go_back')
